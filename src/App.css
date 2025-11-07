@@ -1,0 +1,79 @@
+/* Global styles for Device Management System */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Hover effect for device cards */
+.hover-shadow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Animation for player list appearance */
+.player-management-container {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .player-management-container h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Touch-friendly button sizing for mobile */
+@media (max-width: 576px) {
+  .btn {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Ensure proper spacing on mobile */
+.g-4 {
+  --bs-gutter-y: 1.5rem;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
