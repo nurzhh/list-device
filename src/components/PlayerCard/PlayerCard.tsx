@@ -5,8 +5,8 @@ import apiService from '../../services/apiService';
 import type { PlayerCardProps } from '../../types';
 
 /**
- * PlayerCard component displays player information and balance operations
- * Responsive layout for mobile and desktop
+ * Компонент PlayerCard отображает информацию об игроке и операции с балансом
+ * Адаптивная верстка для мобильных устройств и десктопа
  */
 export const PlayerCard: React.FC<PlayerCardProps> = ({ player, onBalanceUpdate }) => {
   const isNegativeBalance = player.balance < 0;
@@ -15,17 +15,16 @@ export const PlayerCard: React.FC<PlayerCardProps> = ({ player, onBalanceUpdate 
 
   const handleOperation = async (type: 'deposit' | 'withdraw', amount: number) => {
     try {
-      let response;
       if (type === 'deposit') {
-        response = await apiService.deposit(deviceId, placeId, amount);
+        await apiService.deposit(deviceId, placeId, amount);
       } else {
-        response = await apiService.withdraw(deviceId, placeId, amount);
+        await apiService.withdraw(deviceId, placeId, amount);
       }
 
-      // Update parent component with new balance
-      onBalanceUpdate(deviceId, placeId, response.balances);
+      // Обновляем родительский компонент для повторной загрузки данных
+      onBalanceUpdate();
     } catch (error) {
-      throw error; // Re-throw to let BalanceOperations handle
+      throw error; // Пробрасываем ошибку для обработки в BalanceOperations
     }
   };
 

@@ -5,8 +5,8 @@ import { validateAmount } from '../../utils/validation';
 import type { BalanceOperationsProps } from '../../types';
 
 /**
- * BalanceOperations component for deposit and withdraw operations
- * Integrates AmountInput with validation and operation buttons
+ * Компонент BalanceOperations для операций пополнения и снятия средств
+ * Интегрирует AmountInput с валидацией и кнопками операций
  */
 export const BalanceOperations: React.FC<BalanceOperationsProps> = ({
   currentBalance,
@@ -22,7 +22,7 @@ export const BalanceOperations: React.FC<BalanceOperationsProps> = ({
     setError('');
     setSuccessMessage('');
 
-    // Validate amount
+    // Валидируем сумму
     const validation = validateAmount(amount);
     if (!validation.isValid) {
       setError(validation.error || 'Некорректная сумма');
@@ -31,7 +31,7 @@ export const BalanceOperations: React.FC<BalanceOperationsProps> = ({
 
     const numericAmount = parseFloat(amount);
 
-    // Check for insufficient funds on withdrawal
+    // Проверяем недостаточность средств при снятии
     if (type === 'withdraw' && numericAmount > currentBalance && currentBalance >= 0) {
       setError('Недостаточно средств на балансе');
       return;
@@ -47,7 +47,7 @@ export const BalanceOperations: React.FC<BalanceOperationsProps> = ({
       );
       setAmount('');
 
-      // Auto-hide success message after 3 seconds
+      // Автоматически скрываем сообщение об успехе через 3 секунды
       setTimeout(() => setSuccessMessage(''), 3000);
     } catch (err: any) {
       setError(err.message || 'Ошибка выполнения операции');

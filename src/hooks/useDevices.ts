@@ -4,8 +4,8 @@ import { getErrorMessage, extractErrorCode } from '../utils/errorMessages';
 import type { Device, UseDevicesReturn } from '../types';
 
 /**
- * Custom hook for managing device list state
- * Handles loading, error, and success states for device data
+ * Кастомный хук для управления состоянием списка устройств
+ * Обрабатывает состояния загрузки, ошибок и успешной загрузки данных устройств
  */
 export const useDevices = (): UseDevicesReturn => {
   const [devices, setDevices] = useState<Device[]>([]);

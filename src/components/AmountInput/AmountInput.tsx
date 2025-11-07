@@ -4,8 +4,8 @@ import { validateAmount, sanitizeAmountInput } from '../../utils/validation';
 import type { AmountInputProps } from '../../types';
 
 /**
- * AmountInput component with real-time validation
- * Handles controlled input with validation for financial operations
+ * Компонент AmountInput с валидацией в реальном времени
+ * Обрабатывает контролируемый ввод с валидацией для финансовых операций
  */
 export const AmountInput: React.FC<AmountInputProps> = ({
   value,
@@ -18,7 +18,7 @@ export const AmountInput: React.FC<AmountInputProps> = ({
     const rawValue = e.target.value;
     const sanitizedValue = sanitizeAmountInput(rawValue);
 
-    // Validate the sanitized input
+    // Валидируем очищенный ввод
     const validation = validateAmount(sanitizedValue);
 
     if (sanitizedValue === '' || validation.isValid) {

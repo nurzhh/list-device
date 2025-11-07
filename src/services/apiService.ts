@@ -181,14 +181,6 @@ export async function withdraw(
   return updateBalance(deviceId, placeId, newBalance);
 }
 
-/**
- * Объект API сервиса для обратной совместимости и удобства
- * 
- * Варианты использования:
- * 1. Named imports: import { getDevices, deposit } from './apiService'
- * 2. Default import: import apiService from './apiService'; apiService.getDevices()
- * 3. Namespace import: import * as api from './apiService'; api.getDevices()
- */
 export const apiService = {
   getDevices,
   getDevice,
@@ -199,5 +191,4 @@ export const apiService = {
   withdraw,
 };
 
-// Default export для удобства
 export default apiService;

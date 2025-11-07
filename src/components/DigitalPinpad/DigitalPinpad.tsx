@@ -3,8 +3,8 @@ import { Button, Row, Col, Card } from 'react-bootstrap';
 import type { DigitalPinpadProps } from '../../types';
 
 /**
- * DigitalPinpad component provides numeric keypad interface
- * Optimized for touch devices with large buttons
+ * Компонент DigitalPinpad предоставляет интерфейс цифровой клавиатуры
+ * Оптимизирован для сенсорных устройств с большими кнопками
  */
 export const DigitalPinpad: React.FC<DigitalPinpadProps> = ({
   onValueChange,

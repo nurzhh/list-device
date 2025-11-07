@@ -1,4 +1,4 @@
-// Core data models for the Device Management System
+// Основные модели данных для системы управления устройствами
 
 export interface Place {
   device_id: number;
@@ -15,7 +15,7 @@ export interface Device {
   updated_at: string;
 }
 
-// Legacy Player interface for compatibility (maps to Place)
+// Устаревший интерфейс Player для совместимости (соответствует Place)
 export interface Player {
   id: string;
   name: string;
@@ -57,7 +57,7 @@ export interface ValidationResult {
   error?: string;
 }
 
-// Component prop types
+// Типы пропсов компонентов
 export interface DeviceCardProps {
   device: Device;
   onClick: () => void;
@@ -65,7 +65,7 @@ export interface DeviceCardProps {
 
 export interface PlayerCardProps {
   player: Player;
-  onBalanceUpdate: (deviceId: number, placeId: number, newBalance: number) => void;
+  onBalanceUpdate: () => void;
 }
 
 export interface BalanceOperationsProps {
@@ -88,7 +88,7 @@ export interface DigitalPinpadProps {
   onWithdraw: () => void;
 }
 
-// Hook return types
+// Типы возвращаемых значений хуков
 export interface UseDevicesReturn {
   devices: Device[];
   loading: boolean;
@@ -109,7 +109,7 @@ export interface UseBalanceOperationsReturn {
   updateBalance: (deviceId: number, placeId: number, newBalance: number) => Promise<void>;
 }
 
-// Application state types
+// Типы состояния приложения
 export type ViewType = 'devices' | 'players';
 
 export interface AppState {

@@ -4,8 +4,8 @@ import { getErrorMessage, extractErrorCode } from '../utils/errorMessages';
 import type { UseBalanceOperationsReturn } from '../types';
 
 /**
- * Custom hook for handling deposit and withdraw operations
- * Implements optimistic updates and error rollback
+ * Кастомный хук для обработки операций пополнения и снятия средств
+ * Реализует оптимистичные обновления и откат при ошибках
  */
 export const useBalanceOperations = (): UseBalanceOperationsReturn => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -26,7 +26,7 @@ export const useBalanceOperations = (): UseBalanceOperationsReturn => {
       const errorMessage = getErrorMessage(errorCode);
       setError(errorMessage);
       console.error('Failed to update balance:', err);
-      throw err; // Re-throw to allow component to handle
+      throw err; // Пробрасываем ошибку для обработки в компоненте
     } finally {
       setIsSubmitting(false);
     }

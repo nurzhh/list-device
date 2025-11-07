@@ -8,8 +8,8 @@ interface LoadingSpinnerProps {
 }
 
 /**
- * Loading spinner component for async operations
- * Provides consistent loading states across the application
+ * Компонент индикатора загрузки для асинхронных операций
+ * Обеспечивает единообразные состояния загрузки во всем приложении
  */
 export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   message = 'Загрузка...',

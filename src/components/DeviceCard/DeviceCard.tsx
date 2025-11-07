@@ -3,8 +3,8 @@ import { Card, Badge } from 'react-bootstrap';
 import type { DeviceCardProps } from '../../types';
 
 /**
- * DeviceCard component displays device information
- * Responsive card with Bootstrap styling and click handler
+ * Компонент DeviceCard отображает информацию об устройстве
+ * Адаптивная карточка со стилями Bootstrap и обработчиком клика
  */
 export const DeviceCard: React.FC<DeviceCardProps> = ({ device, onClick }) => {
   const placeCount = device.places.length;

@@ -11,8 +11,8 @@ interface PlayerManagementProps {
 }
 
 /**
- * PlayerManagement component displays player list with balance operations
- * Integrates all player-related components and handles device-specific player loading
+ * Компонент PlayerManagement отображает список игроков с операциями баланса
+ * Интегрирует все компоненты, связанные с игроками, и обрабатывает загрузку игроков для конкретного устройства
  */
 export const PlayerManagement: React.FC<PlayerManagementProps> = ({
   device,
@@ -20,12 +20,8 @@ export const PlayerManagement: React.FC<PlayerManagementProps> = ({
 }) => {
   const { players, loading, error, refetch } = usePlayers(device.id);
 
-  const handleBalanceUpdate = (
-    deviceId: number,
-    placeId: number,
-    newBalance: number
-  ) => {
-    // Refetch players to get updated data
+  const handleBalanceUpdate = () => {
+    // Перезагружаем игроков для получения обновленных данных после операции с балансом
     refetch();
   };
 

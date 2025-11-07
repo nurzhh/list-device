@@ -12,8 +12,8 @@ interface DeviceListProps {
 }
 
 /**
- * DeviceList component displays devices in responsive grid
- * Handles loading states and empty states
+ * Компонент DeviceList отображает устройства в адаптивной сетке
+ * Обрабатывает состояния загрузки и пустые состояния
  */
 export const DeviceList: React.FC<DeviceListProps> = ({
   devices,
