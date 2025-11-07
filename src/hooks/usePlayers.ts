@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback } from 'react';
-import apiService from '../services/apiService';
-import { getErrorMessage, extractErrorCode } from '../utils/errorMessages';
-import type { Player, UsePlayersReturn } from '../types';
+import { useState, useEffect, useCallback } from "react";
+import apiService from "../services/apiService";
+import { getErrorMessage, extractErrorCode } from "../utils/errorMessages";
+import type { Player, UsePlayersReturn } from "../types";
 
 /**
  * Custom hook for managing player list state for specific device
@@ -25,11 +25,11 @@ export const usePlayers = (deviceId: number | null): UsePlayersReturn => {
       const deviceData = await apiService.getDevice(deviceId);
       const playersData = apiService.convertPlacesToPlayers(deviceData);
       setPlayers(playersData);
-    } catch (err: any) {
+    } catch (err: unknown) {
       const errorCode = extractErrorCode(err);
       const errorMessage = getErrorMessage(errorCode);
       setError(errorMessage);
-      console.error('Failed to fetch players:', err);
+      console.error("Failed to fetch players:", err);
     } finally {
       setLoading(false);
     }
